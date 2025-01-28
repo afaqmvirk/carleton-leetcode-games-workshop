@@ -1,7 +1,7 @@
 def max_reservations_with_capacity(capacity, reservations):
     usage = [0] * 24
     n = len(reservations)
-    best_count = 0  # Global best (maximum) accepted reservations so far.
+    best_count = 0  
 
     def can_accept(s, e, seats):
         for t in range(s, e):
@@ -36,15 +36,7 @@ def max_reservations_with_capacity(capacity, reservations):
 
 
 if __name__ == "__main__":
-    # Example of reading input:
-    # First line: integer capacity
-    # Next lines: reservations in the form (S, E, N)
-    #
-    # For the sample, let's hardcode or parse as needed.
 
-    # Sample input interpretation:
-    # capacity = 6
-    # reservations = [(9, 12, 4), (3, 6, 1), (4, 5, 2), (1, 3, 3)]
 
     capacity = 6
     reservations = [
@@ -55,6 +47,5 @@ if __name__ == "__main__":
 
     ]
 
-    # Compute and print the result
     answer = max_reservations_with_capacity(capacity, reservations)
-    print(answer)  # Expect 4 for the sample
+    print(answer)

@@ -10,7 +10,7 @@ def generate_random_flips(length):
     Returns:
         str: A random sequence of 'V' and 'H'.
     """
-    return ''.join(random.choice(['X', 'O']) for _ in range(length))
+    return ''.join(random.choice(['V', 'H']) for _ in range(length))
 
 def save_to_file(filename, content):
     """
