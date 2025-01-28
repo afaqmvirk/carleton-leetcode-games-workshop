@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Challenge 1.0}
+\fancyhead[R]{ddakji Challenge}
+
+\begin{document}
+
+\title{\textbf{LeetCode Challenge: ddakji}}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problem Description}
+
+A \textit{ddakji} is a grid with four symbols drawn on its top face, arranged as follows:
+
+\[
+\begin{array}{cc}
+A & B \\
+C & D \\
+\end{array}
+\]
+
+The bottom face of the ddakji is blank. The ddakji can be flipped \textbf{vertically} or \textbf{horizontally}, as described below:
+
+\begin{itemize}
+    \item A \textbf{vertical flip} (\texttt{V}) is peformed as shown:
+    \[
+    \begin{array}{cc}
+    A & B \\
+    C & D \\
+    \end{array}
+    \xrightarrow{\texttt{V}}
+    \begin{array}{cc}
+    C & D \\
+    A & B \\
+    \end{array}
+    \]
+    \item A \textbf{horizontal flip} (\texttt{H}) is performed as shown:
+    \[
+    \begin{array}{cc}
+    A & B \\
+    C & D \\
+    \end{array}
+    \xrightarrow{\texttt{H}}
+    \begin{array}{cc}
+    B & A \\
+    D & C \\
+    \end{array}
+    \]
+\end{itemize}
+
+The ddakji starts in its original orientation:
+\[
+\begin{array}{cc}
+A & B \\
+C & D \\
+\end{array}
+\]
+
+You are given a string of flips, consisting of the characters \texttt{V} (vertical flip) and \texttt{H} (horizontal flip), such as \texttt{VVHVVHHHHHVVVVV}. 
+
+\begin{enumerate}
+    \item Determine the number of times the ddakji returns to its original orientation, including the starting position.
+    \item Output the final orientation of the ddakji after all the flips.
+\end{enumerate}
+
+\section*{Input Format}
+A single string $S$ of length $1 \leq |S| \leq 10^5$, consisting only of the characters \texttt{V} and \texttt{H}.
+
+\section*{Output Format}
+\begin{enumerate}
+    \item An integer $N$, the number of times the ddakji is in its original orientation.
+    \item The final orientation of the ddakji in a $2 \times 2$ grid format.
+\end{enumerate}
+
+\section*{Sample Input}
+\texttt{VVHVVHHHHHVVVVV}
+
+\section*{Sample Output}
+\begin{verbatim}
+6
+C D
+A B
+\end{verbatim}
+
+\section*{Explanation}
+The sequence of flips alternates the orientation of the ddakji. After every flip, the state is checked to see if it matches the original orientation:
+\[
+\begin{array}{cc}
+A & B \\
+C & D \\
+\end{array}
+\]
+
+By the end of the sequence, the ddakji has returned to its original orientation a total of $6$ times (including the initial position). The final orientation after all flips is:
+\[
+\begin{array}{cc}
+C & D \\
+A & B \\
+\end{array}
+\]
+
+\section*{Constraints}
+\begin{itemize}
+    \item The input string contains only \texttt{V} and \texttt{H}.
+    \item The grid always starts in the orientation shown above.
+    \item The function must execute efficiently for large inputs.
+\end{itemize}
+
+\section*{Notes}
+This problem tests your ability to simulate operations on a grid and recognize cyclical patterns.
+
+\end{document}
